@@ -1,0 +1,26 @@
+a {
+    color: var( --color-white);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+section {
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+li {
+    padding-right: 15px;
+    list-style: none;
+}
