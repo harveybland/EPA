@@ -1,0 +1,50 @@
+a {
+    color: var( --color-white);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+section {
+    padding: 20px 0;
+    background: var(--color-white);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+}
+
+.active {
+    background: var(--color-hover);
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+li {
+    padding-right: 15px;
+    list-style: none;
+}
+
+li:hover {
+    background: var(--color-hover);
+}
+li {
+    padding-right: 15px;
+    list-style: none;
+}
+
+
+// Edit nav
+.mat-toolbar.mat-primary {
+    color: #fff;
+    background: var(--color-blue);
+}
+
+// .mat-toolbar-row, .mat-toolbar-single-row {
+//      height: 0px; 
+// }

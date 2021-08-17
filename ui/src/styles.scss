@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background: var(--color-background);
+}
+
+html {
+    // Colour variables
+    --color-white: #fff;
+    --color-black: #000;
+    --colour-dark-gray: #222;
+    --color-blue: #1E73BE;
+    --color-background: #F4F4FD;
+    --color-hover: #035a9e;;
+}
+
+.F-C {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    background: var(--color-white);
+    padding: 30px;
+    div {
+        padding-bottom: 10px;
+    }
+}
+
+.route div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
