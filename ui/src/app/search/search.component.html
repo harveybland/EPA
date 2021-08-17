@@ -37,4 +37,17 @@
     <button>Find Apprenticeships</button>
   </div>
 </div>
+
+
+  <div *ngFor="let item of AppArray">
+    <div>
+      <h3>Name</h3>
+      <p>{{ item.name }}</p>
+    </div>
+    <div>
+      <h3>Link</h3>
+      <a>{{ item.link }}</a>
+    </div>
+  </div>
+
 </div>

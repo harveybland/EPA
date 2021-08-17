@@ -1,5 +1,5 @@
 import { ApplyService } from './apply.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './apply.component.html',
   styleUrls: ['./apply.component.scss']
 })
-export class ApplyComponent implements OnInit {
+export class ApplyComponent  {
 
   constructor(private applyService: ApplyService,
               private router: Router
@@ -37,14 +37,12 @@ export class ApplyComponent implements OnInit {
     comments: ''
   }
 
-  ngOnInit() {
-  }
-
   submit() {
     console.log(this.apply)
-    // this.applyService.apply(this.apply).subscribe((res) => {
-    //   console.log(res)
-    // })
+    this.applyService.apply(this.apply).subscribe((res) => {
+      console.log(res)
+      this.router.navigate(['/landing']);
+    })
   }
 
 }

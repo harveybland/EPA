@@ -3,10 +3,5 @@ module.exports = {
     user: "admin",
     password: "Yh2RCmGWfXFxwZv68J4m",
     database: "webform",
-    pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-      }
+    dialect: 'mysql'
 }
