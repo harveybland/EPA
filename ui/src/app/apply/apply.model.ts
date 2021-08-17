@@ -17,8 +17,8 @@ export class Apply {
     hair?: number;
     health?: number;
     legal?: number;
-    protection?: number;
+    protective?: number;
     sales?: number;
     transport?: number;
-    comments?: string;
+    comments: string;
 }

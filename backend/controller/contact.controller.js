@@ -1,9 +1,8 @@
-const server = require('../server')
-const db = require("../models");
+const db = require("../models/contact.index");
 const Contact = db.Contact;
 
 // Create a new contact
-server.app.post('/api/contact', (req, res) => {
+exports.create = (req, res) => {
     // Validate
     if (!req.body.firstname) {
         res.status(400).send({
@@ -26,4 +25,21 @@ server.app.post('/api/contact', (req, res) => {
             message: err.message
         })
     })
-})
+}
+
+exports.findAll = (req, res) => {
+    const id = req.query.id;
+    var condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
+  
+    Contact.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving tutorials."
+        });
+      });
+  };
+

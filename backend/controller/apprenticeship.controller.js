@@ -1,10 +1,19 @@
-const server = require('../server')
-const db = require('../models');
+const db = require('../models/app.index')
 const Apprenticeship = db.Apprenticeship
+const Op = db.Sequelize.Op
 
-// Get all apprenticeships
-server.app.get('/api/apprenticeships', (req, res) => {
-    db.Apprenticeship.findAll().then(data => {
-        res.send(data)
-    })
-})
+exports.findAll = (req, res) => {
+    const id = req.query.id;
+    var condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
+  
+    Apprenticeship.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving tutorials."
+        });
+      });
+  };

@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
         legal: {
             type: DataTypes.NUMBER
         },
-        protection: {
+        protective: {
             type: DataTypes.NUMBER
         },
         sales: {

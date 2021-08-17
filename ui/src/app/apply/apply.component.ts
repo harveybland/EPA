@@ -18,6 +18,7 @@ export class ApplyComponent  {
     surname: '',
     email: '',
     phone: '',
+    comments: '',
     previous_level: null,
     agriculture: '',
     business: '',
@@ -31,10 +32,9 @@ export class ApplyComponent  {
     hair: '',
     health: '',
     legal: '',
-    protection: '',
+    protective: '',
     sales: '',
-    transport: '',
-    comments: ''
+    transport: ''
   }
 
   submit() {
