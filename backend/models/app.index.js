@@ -4,17 +4,17 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize(dbconfig.database, dbconfig.user, dbconfig.password, {
     host: dbconfig.host,
     dialect: dbconfig.dialect,
-    define: {
+    operatorsAliases: false,
+    define: {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         timestamps: false,
-        freezeTableName: true,
-        tableName: 'Apprenticeships'
     }
 })
+// AcademyModule.removeAttribute('id');
 
 const db = {}
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Contact = require("./apprenticeship.model")(sequelize, Sequelize);
+db.Apprenticeships = require("./apprenticeship.model")(sequelize, Sequelize);
 module.exports = db

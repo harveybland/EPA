@@ -3,7 +3,6 @@ html, body { height: 100%; }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background: var(--color-background);
 }
 
 html {
@@ -19,19 +18,25 @@ html {
 .F-C {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 20px;
+    justify-content: center !important;
+    padding: 0 0px;
 }
 
 img {
     max-width: 100%;
+    width: 750px;
+    margin: 40px 20px;
+    padding: 0 20px;
 }
 
 .container {
     background: var(--color-white);
     padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
     div {
-        padding-bottom: 10px;
+        padding: 5px 0;
     }
 }
 

@@ -17,53 +17,53 @@ module.exports = (sequelize, DataTypes) => {
             required: true
         },
         previous_level: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
             
         },
         agriculture: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         business: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         care: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         catering: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         construction: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         creative: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         digital: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         education: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         engineering: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         hair: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         health: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         legal: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         protective: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         sales: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         transport: {
-            type: DataTypes.NUMBER
+            type: DataTypes.STRING
         },
         comments: {
             type: DataTypes.STRING

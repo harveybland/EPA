@@ -8,13 +8,12 @@ import { AppComponent } from './app.component';
 import { ApplyComponent } from './apply/apply.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { SearchComponent } from './search/search.component';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [		
@@ -27,12 +26,13 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
     MatCheckboxModule,
     MatButtonModule,
     MatSelectModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

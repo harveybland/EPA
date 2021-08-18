@@ -7,7 +7,7 @@ module.exports = app => {
     router.post("/", contact.create);
 
     // Get all contacts
-    router.get("/", contact.findAll);
+    // router.get("/", contact.findAll);
 
     app.use('/api/contact', router)
 }

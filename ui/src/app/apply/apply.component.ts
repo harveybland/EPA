@@ -1,17 +1,30 @@
 import { ApplyService } from './apply.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl,  Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-apply',
   templateUrl: './apply.component.html',
   styleUrls: ['./apply.component.scss']
 })
-export class ApplyComponent  {
+export class ApplyComponent implements OnInit  {
+
 
   constructor(private applyService: ApplyService,
-              private router: Router
-    ) { }
+              private router: Router,
+              
+    ) {}
+
+  // Form: FormGroup = new FormGroup({
+  //   firstname: new FormControl('', Validators.required),
+  //   surname: new FormControl('', Validators.required)
+  // });
+
+  ngOnInit() {
+
+  }
 
   apply = {
     firstname: '',
@@ -36,6 +49,8 @@ export class ApplyComponent  {
     sales: '',
     transport: ''
   }
+
+  
 
   submit() {
     console.log(this.apply)

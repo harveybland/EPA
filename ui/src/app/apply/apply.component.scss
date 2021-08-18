@@ -10,3 +10,66 @@ button {
 p {
     margin: 0;
 }
+
+.interests {
+  h2 {
+    padding: 0 20px
+  }
+  background: var(--color-white);
+    div:nth-child(even){
+      background: lightgray;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+}
+
+
+.form-group {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+  
+    &.form-group--inline {
+      .checkbox {
+        padding: 13px 15px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  
+    &.form-group--invalid {
+      textarea,
+      input {
+        transition: border-color 0.3s;
+        border-color: var(--color-danger);
+      }
+      &:after {
+        content: attr(data-error);
+        position: absolute;
+        bottom: -22px;
+        left: 5px;
+        font-size: 1.4rem;
+        color: var(--color-danger);
+      }
+    }
+  
+    &.form-group--invalid-email {
+      textarea,
+      input {
+        transition: border-color 0.3s;
+        border-color: var(--color-danger);
+      }
+      &:after {
+        content: attr(data-error-email);
+        position: absolute;
+        bottom: -22px;
+        left: 5px;
+        font-size: 1.4rem;
+        color: var(--color-danger);
+      }
+    }
+}

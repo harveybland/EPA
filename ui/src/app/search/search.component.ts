@@ -9,13 +9,20 @@ import { apprenticeship } from './search.model';
 })
 export class SearchComponent implements OnInit {
 
+  table = false;
+
   constructor(private apprenticeshipService: ApprenticeshipService) { }
 
   public AppArray: apprenticeship[] = []
 
   ngOnInit() {
+ 
+  }
+
+  find() {
     this.apprenticeshipService.getApprenticeships().subscribe(data => {
       console.log(data)
+      this.table = true
       this.AppArray = data;
     })
   }

@@ -1,6 +1,6 @@
 <div class="container">
   <div><h2>Please enter your details and we'll be in touch</h2></div>
-  <div class="route">
+  <div class="route" formGroup="form" (ngSubmit)="submit">
     <div>
       <label>First Name:</label>
       <input type="text" [(ngModel)]="apply.firstname" name="firstname">
@@ -28,7 +28,9 @@
         <option value="7">7</option>
       </select>
     </div>
-
+  </div>
+</div>
+  <section class="interests">
     <h2>Please select the route that interest you:</h2>
       <div>
         <p>Agriculture, environmental and animal care</p>
@@ -90,15 +92,15 @@
         <p>Transport and logistics</p>
         <mat-checkbox color="primary" [(ngModel)]="apply.transport" name="transport"></mat-checkbox>
       </div>
+    </section>
 
+    <div class="container">
       <div>
-        <!-- <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5" [(ngModel)]="apply.comments" name="comments"></textarea> -->
-        <p>comments</p>
-        <input type="text" [(ngModel)]="apply.comments" name="comments">
+        <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5" [(ngModel)]="apply.comments" name="comments"></textarea>
       </div>
 
-      <div class="btn">
-        <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+
+      <div class="btn F-C">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
       </div>
-  </div>
-</div>
+    </div>
