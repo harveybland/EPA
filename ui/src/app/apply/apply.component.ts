@@ -12,12 +12,12 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class ApplyComponent implements OnInit  {
   
   recaptcha: any[];
-
-  Form: FormGroup;
-
-  // Form state 
-  loading = false;
-  success = false;
+  catcheResolve : boolean = false;
+  
+  Form: FormGroup = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required)
+  });
 
   apply = {
     firstname: '',
@@ -25,7 +25,7 @@ export class ApplyComponent implements OnInit  {
     email: '',
     phone: '',
     comments: '',
-    previous_level: null,
+    previous_level: '',
     agriculture: '',
     business: '',
     care: '',
@@ -43,6 +43,7 @@ export class ApplyComponent implements OnInit  {
     transport: ''
   }
 
+
   constructor(private applyService: ApplyService,
               private router: Router,
               private fb: FormBuilder              
@@ -59,13 +60,26 @@ export class ApplyComponent implements OnInit  {
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
     console.log(this.recaptcha)
+    this.catcheResolve = true;
   }
 
   submit() {
+    if (!this.catcheResolve) {
+      alert('Are you a robot!')
+      return;
+    }
+    if(this.Form.valid){
+      this.Form.controls.firstname.markAsDirty();
+      this.Form.controls.surname.markAsDirty();
+      this.Form.controls.firstname.markAsTouched();
+      this.Form.controls.surname.markAsTouched();
+      this.Form.controls.firstname.markAsPristine();
+      this.Form.controls.surname.markAsPristine();
+      return
+    }
     console.log(this.apply)
     this.applyService.apply(this.apply).subscribe((res) => {
       console.log(res)
-      
       this.router.navigate(['/landing']);
     })
   }

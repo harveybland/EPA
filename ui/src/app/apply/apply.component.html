@@ -1,13 +1,17 @@
 <div class="container">
   <div><h2>Please enter your details and we'll be in touch</h2></div>
+  <form>
+    <!-- [formGroup]="Form" (ngSubmit)="submit()" -->
   <div class="route">
     <div>
       <label>First Name:</label>
       <input type="text" [(ngModel)]="apply.firstname" name="firstname" placeholder="John" required>
+      <!-- <span class="error" *ngIf="Form.controls.firstname.invalid && Form.controls.firstname.touched">Please enter the first name</span> -->
     </div>
     <div>
       <label>Surname:</label>
       <input type="text" [(ngModel)]="apply.surname" name="surname" placeholder="Smith" required>
+          <!-- <span class="error" *ngIf="Form.controls.surname.invalid && Form.controls.surname.touched">Please enter your last name</span> -->
     </div>
     <div>
       <label>Email:</label>
@@ -31,7 +35,6 @@
       </select>
     </div>
   </div>
-</div>
   <section class="interests">
     <h2>Please select the route that interest you:</h2>
       <div>
@@ -122,9 +125,10 @@
         <label>
           <mat-checkbox color="primary" [(ngModel)]="apply.transport" name="transport"></mat-checkbox>
           <p>Transport and logistics</p>
-      </label>
+        </label>
       </div>
     </section>
+  </form>
     <div class="container">
       <div class="F-C">
         <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5" [(ngModel)]="apply.comments" name="comments" style="resize: none;"></textarea>
@@ -135,6 +139,7 @@
       </div>
 
       <div class="btn F-C">
-        <button mat-raised-button color="primary" type="submit" (click)="submit()">Submit</button>
+        <button mat-raised-button color="primary" (click)="submit()" type="submit" [disabled]>Submit</button>
+        
       </div>
     </div>

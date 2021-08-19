@@ -17,6 +17,14 @@ mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primar
     background: var(--color-blue) !important;
 }
 
+app-apply {
+    max-width: 100%;
+}
+
+app-search {
+    max-width: 100%;
+}
+
 input {
     border: solid 1px #d4d3d3;
     padding: 10px;
@@ -49,6 +57,14 @@ html {
     display: flex;
     align-items: center;
     justify-content: center !important;
+    padding: 0 0px;
+    flex-wrap: wrap;
+}
+
+.F-E {
+    display: flex;
+    align-items: center;
+    justify-content: end !important;
     padding: 0 0px;
     flex-wrap: wrap;
 }
