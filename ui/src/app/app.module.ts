@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 
+import { NgxPaginationModule } from "ngx-pagination";
 import { RecaptchaModule } from 'ng-recaptcha';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -40,7 +41,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     MatChipsModule,
     MatProgressSpinnerModule,
-    RecaptchaModule
+    RecaptchaModule,
+    NgxPaginationModule
     
   ],
   providers: [],

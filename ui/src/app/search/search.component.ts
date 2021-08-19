@@ -5,13 +5,17 @@ import { apprenticeship } from './search.model';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
 
   constructor(private apprenticeshipService: ApprenticeshipService) { }
 
   public AppArray: apprenticeship[] = []
+
+  totalLength:any;
+  page: number = 1;
+
 
  model = {
     route: '',
@@ -28,6 +32,8 @@ export class SearchComponent implements OnInit {
     this.apprenticeshipService.getApprenticeships(this.model).subscribe(data => {
       console.log(this.model)
       console.log(data)
+
+      this.totalLength = data.length;
       this.AppArray = data;
     })
   }

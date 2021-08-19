@@ -1,11 +1,9 @@
 <div class="container">
-<div>
   <h2>Use the fields below to find the apprenticeships</h2>
-</div>
 
 <form class="route">
   <div>
-    <label>Route:</label>
+    <span>Route:</span>
     <select matNativeControl  [(ngModel)]="model.route" name="route">
       <option value="">Any</option>
       <option value="Agriculture, environmental and animal care">Agriculture, environmental and animal care</option>
@@ -100,10 +98,14 @@
         </tr>
     </tbody>
     <tbody>
-      <tr *ngFor="let item of AppArray">
+      <tr *ngFor="let item of AppArray | paginate: { 
+        itemsPerPage: 10, 
+        currentPage: page,
+        totleItems: totalLength   } ">
         <td>{{ item.name }}</td>
         <td> <a [href]="item.link" target="_blank">{{ item.link }}</a> </td>
       </tr>
+      <pagination-controls style="text-align: center;" class="my-pagination" (pageChange)="page = $event"></pagination-controls>
     </tbody>
   </table>
 </div>

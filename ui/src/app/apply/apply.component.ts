@@ -15,33 +15,52 @@ export class ApplyComponent implements OnInit  {
   catcheResolve : boolean = false;
   
   Form: FormGroup = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required)
+    firstname: new FormControl('', Validators.required),
+    surname: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    phone: new FormControl(''),
+    comments: new FormControl(''),
+    previous_level: new FormControl(''),
+    agriculture: new FormControl(''),
+    business: new FormControl(''),
+    care: new FormControl(''),
+    catering: new FormControl(''),
+    construction: new FormControl(''),
+    creative: new FormControl(''),
+    digital: new FormControl(''),
+    education: new FormControl(''),
+    engineering: new FormControl(''),
+    hair: new FormControl(''),
+    health: new FormControl(''),
+    legal: new FormControl(''),
+    protective: new FormControl(''),
+    sales: new FormControl(''),
+    transport: new FormControl('')
   });
 
-  apply = {
-    firstname: '',
-    surname: '',
-    email: '',
-    phone: '',
-    comments: '',
-    previous_level: '',
-    agriculture: '',
-    business: '',
-    care: '',
-    catering: '',
-    construction: '',
-    creative: '',
-    digital: '',
-    education: '',
-    engineering: '',
-    hair: '',
-    health: '',
-    legal: '',
-    protective: '',
-    sales: '',
-    transport: ''
-  }
+  // apply = {
+  //   firstname: '',
+  //   surname: '',
+  //   email: '',
+  //   phone: '',
+  //   comments: '',
+  //   previous_level: '',
+  //   agriculture: '',
+  //   business: '',
+  //   care: '',
+  //   catering: '',
+  //   construction: '',
+  //   creative: '',
+  //   digital: '',
+  //   education: '',
+  //   engineering: '',
+  //   hair: '',
+  //   health: '',
+  //   legal: '',
+  //   protective: '',
+  //   sales: '',
+  //   transport: ''
+  // }
 
 
   constructor(private applyService: ApplyService,
@@ -50,16 +69,12 @@ export class ApplyComponent implements OnInit  {
     ) {}
 
   ngOnInit() {
-    this.Form = this.fb.group({
-      firstname: ['', [Validators.required] ],
-      surname: ['', [Validators.required] ]
-    })
+
   }
 
 
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
-    console.log(this.recaptcha)
     this.catcheResolve = true;
   }
 
@@ -75,10 +90,10 @@ export class ApplyComponent implements OnInit  {
       this.Form.controls.surname.markAsTouched();
       this.Form.controls.firstname.markAsPristine();
       this.Form.controls.surname.markAsPristine();
-      return
+    } else {
+      alert('Yeet')
     }
-    console.log(this.apply)
-    this.applyService.apply(this.apply).subscribe((res) => {
+    this.applyService.apply(this.Form.value).subscribe((res) => {
       console.log(res)
       this.router.navigate(['/landing']);
     })

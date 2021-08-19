@@ -50,7 +50,8 @@ html {
     --colour-dark-gray: #222;
     --color-blue: #1E73BE;
     --color-background: #F4F4FD;
-    --color-hover: #035a9e;;
+    --color-hover: #035a9e;
+    --color-danger: red;
 }
 
 .F-C {
@@ -92,11 +93,4 @@ label {
 
 p {
     color: var(--colour-dark-gray);
-}
-
-.route div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }

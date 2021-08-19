@@ -7,8 +7,16 @@ button {
     width: 200px;
 }
 
+span {
+  font-size: 17px;
+}
+
 p {
     margin: 0;
+}
+
+h2 {
+  margin-bottom: 30px;
 }
 
 .interests {
@@ -16,7 +24,7 @@ p {
     padding: 0 20px
   }
   background: var(--color-white);
-    div:nth-child(even){
+    label:nth-child(even){
       background: #F8F8F8;
     }
     label {
@@ -35,8 +43,11 @@ p {
 
 .form-group {
   position: relative;
-  display: block;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
 
   &.form-group--inline {
     .checkbox {
@@ -55,26 +66,26 @@ p {
     &:after {
       content: attr(data-error);
       position: absolute;
-      bottom: -22px;
-      left: 5px;
-      font-size: 1.4rem;
+      font-size: 0.7rem;
+      right: 0px;
       color: var(--color-danger);
+      top: -21px;  
     }
   }
 
-  &.form-group--invalid-email {
-    textarea,
-    input {
-      transition: border-color 0.3s;
-      border-color: var(--color-danger);
-    }
-    &:after {
-      content: attr(data-error-email);
-      position: absolute;
-      bottom: -22px;
-      left: 5px;
-      font-size: 1.4rem;
-      color: var(--color-danger);
-    }
-  }
+  // &.form-group--invalid-email {
+  //   textarea,
+  //   input {
+  //     transition: border-color 0.3s;
+  //     border-color: var(--color-danger);
+  //   }
+  //   &:after {
+  //     content: attr(data-error-email);
+  //     position: absolute;
+  //     bottom: -22px;
+  //     left: 5px;
+  //     font-size: 1.4rem;
+  //     color: var(--color-danger);
+  //   }
+  // }
 }

@@ -1,145 +1,133 @@
 <div class="container">
-  <div><h2>Please enter your details and we'll be in touch</h2></div>
-  <form>
-    <!-- [formGroup]="Form" (ngSubmit)="submit()" -->
-  <div class="route">
-    <div>
-      <label>First Name:</label>
-      <input type="text" [(ngModel)]="apply.firstname" name="firstname" placeholder="John" required>
-      <!-- <span class="error" *ngIf="Form.controls.firstname.invalid && Form.controls.firstname.touched">Please enter the first name</span> -->
-    </div>
-    <div>
-      <label>Surname:</label>
-      <input type="text" [(ngModel)]="apply.surname" name="surname" placeholder="Smith" required>
-          <!-- <span class="error" *ngIf="Form.controls.surname.invalid && Form.controls.surname.touched">Please enter your last name</span> -->
-    </div>
-    <div>
-      <label>Email:</label>
-      <input type="text" [(ngModel)]="apply.email" name="email" placeholder="example@gmail.com">
-    </div>
-    <div>
-      <label>Contact Number</label>
-      <input type="text" [(ngModel)]="apply.phone" name="phone" placeholder="07957 445590">
-    </div>
-    <div>
-      <label>Level of previous qualifications:</label>
-      <select matNativeControl [(ngModel)]="apply.previous_level" name="previous_level">
-        <option value="" disabled>Previous level</option>
-        <option value="0">0</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-      </select>
-    </div>
-  </div>
+  <h2>Please enter your details and we'll be in touch</h2>
+  <form class="route" [formGroup]="Form" (ngSubmit)="submit()">
+
+      <label class="form-group"  data-error="Please enter your first name"
+      [class.form-group--invalid]="Form.controls.firstname.invalid && this.Form.controls.firstname.touched">
+        <span>First name:</span>
+        <input type="text" class="input"  name="firstname" required formControlName="firstname">
+      </label>
+    
+    <label class="form-group"  data-error="Please enter your surname"
+    [class.form-group--invalid]="Form.controls.surname.invalid && this.Form.controls.surname.touched">
+      <span>Surname:</span>
+      <input type="text" name="surname" required formControlName="surname">
+    </label>
+
+    <label class="form-group">
+      <span>Email:</span>
+      <input type="text"  name="email" required formControlName="email">
+    </label>
+
+    <label class="form-group">
+      <span>Contact Number</span>
+      <input type="text"  name="phone" formControlName="phone">
+    </label>
+
+      <label class="form-group">
+        <span>Level of previous qualifications:</span>
+        <select matNativeControl  name="previous_level" formControlName="previous_level">
+          <option value="" disabled>Previous level</option>
+          <option value="0">0</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select>
+      </label>
+
   <section class="interests">
-    <h2>Please select the route that interest you:</h2>
-      <div>
+    <h2>Please select the route that interest you:</h2>      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.agriculture" name="agriculture"></mat-checkbox>
+          <mat-checkbox color="primary"  name="agriculture" formControlName="agriculture"></mat-checkbox>
           <p>Agriculture, environmental and animal care</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.business" name="business"></mat-checkbox>
+          <mat-checkbox color="primary"  name="business" formControlName="business"></mat-checkbox>
           <p>Business and administration</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.care" name="care"></mat-checkbox>
+          <mat-checkbox color="primary"  name="care" formControlName="care"></mat-checkbox>
           <p>Care services</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.catering" name="catering" ></mat-checkbox>
+          <mat-checkbox color="primary"  name="catering" formControlName="catering"></mat-checkbox>
           <p>Catering and hospitality</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.construction" name="construction" ></mat-checkbox>
+          <mat-checkbox color="primary"  name="construction" formControlName="construction"></mat-checkbox>
           <p>Construction</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.creative" name="creative" ></mat-checkbox>
+          <mat-checkbox color="primary" name="creative" formControlName="creative"></mat-checkbox>
           <p>Creative and design</p>
-      </label>
-      </div>
-      <div>
+      </label>   
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.digital" name="digital" ></mat-checkbox>
+          <mat-checkbox color="primary" name="digital" formControlName="digital"></mat-checkbox>
           <p>Digital</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.education" name="education" ></mat-checkbox>
+          <mat-checkbox color="primary" name="education" formControlName="education"></mat-checkbox>
           <p>Education and childcare</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.engineering" name="engineering" ></mat-checkbox>
+          <mat-checkbox color="primary"  name="engineering" formControlName="engineering"></mat-checkbox>
           <p>Engineering and manufacturing</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.hair" name="hair" ></mat-checkbox>
+          <mat-checkbox color="primary" name="hair" formControlName="hair"></mat-checkbox>
           <p>Hair and beauty</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.health" name="health" ></mat-checkbox>
+          <mat-checkbox color="primary" name="health" formControlName="health"></mat-checkbox>
           <p>Health and science</p>
-        </label>
-      </div>
-      <div>
+        </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.legal" name="legal"></mat-checkbox>
+          <mat-checkbox color="primary"  name="legal" formControlName="legal"></mat-checkbox>
           <p>Legal, finance and accounting</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.protective" name="protective"></mat-checkbox>
+          <mat-checkbox color="primary"  name="protective" formControlName="protective"></mat-checkbox>
           <p>Protective services</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.sales" name="sales"></mat-checkbox>
+          <mat-checkbox color="primary"  name="sales" formControlName="sales"></mat-checkbox>
           <p>Sales, marketing and procurement</p>
-      </label>
-      </div>
-      <div>
+      </label>      
+      
         <label>
-          <mat-checkbox color="primary" [(ngModel)]="apply.transport" name="transport"></mat-checkbox>
+          <mat-checkbox color="primary"  name="transport" formControlName="transport"></mat-checkbox>
           <p>Transport and logistics</p>
         </label>
-      </div>
+      
     </section>
-  </form>
     <div class="container">
       <div class="F-C">
-        <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5" [(ngModel)]="apply.comments" name="comments" style="resize: none;"></textarea>
+        <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5"  name="comments" formControlName="comments" style="resize: none;"></textarea>
       </div>
-
+      
       <div class="recaptcha F-C">
         <re-captcha (resolved)="resolved($event)" siteKey="6Ldd4g4cAAAAAF9T3jESSBu5LSpII6mHTRUgXVKd"></re-captcha>
       </div>
-
+      
       <div class="btn F-C">
-        <button mat-raised-button color="primary" (click)="submit()" type="submit" [disabled]>Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]>Submit</button>
         
       </div>
     </div>
+  </form>
