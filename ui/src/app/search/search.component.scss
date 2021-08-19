@@ -8,15 +8,23 @@
     cursor: pointer;
 }
 
+.find {
+    width: 210px;
+}
+
+.result p {
+    margin: 30px 0 0 0;
+}
+
 td {
     padding: 5px 10px;
 }
 
 th{
     padding: 5px 10px;
-    background: lightgray;
+    background: #eee;
 }
 
 tr:nth-child(even){
-  background: lightgray;
+  background: #eee;
 }

@@ -1,25 +1,26 @@
 <div class="container">
   <div><h2>Please enter your details and we'll be in touch</h2></div>
-  <form class="route">
+  <div class="route">
     <div>
       <label>First Name:</label>
-      <input type="text" [(ngModel)]="apply.firstname" name="firstname" required>
+      <input type="text" [(ngModel)]="apply.firstname" name="firstname" placeholder="John" required>
     </div>
     <div>
       <label>Surname:</label>
-      <input type="text" [(ngModel)]="apply.surname" name="surname" required>
+      <input type="text" [(ngModel)]="apply.surname" name="surname" placeholder="Smith" required>
     </div>
     <div>
       <label>Email:</label>
-      <input type="text" [(ngModel)]="apply.email" name="email">
+      <input type="text" [(ngModel)]="apply.email" name="email" placeholder="example@gmail.com">
     </div>
     <div>
       <label>Contact Number</label>
-      <input type="text" [(ngModel)]="apply.phone" name="phone">
+      <input type="text" [(ngModel)]="apply.phone" name="phone" placeholder="07957 445590">
     </div>
     <div>
       <label>Level of previous qualifications:</label>
       <select matNativeControl [(ngModel)]="apply.previous_level" name="previous_level">
+        <option value="" disabled>Previous level</option>
         <option value="0">0</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -29,75 +30,108 @@
         <option value="7">7</option>
       </select>
     </div>
-  </form>
+  </div>
 </div>
   <section class="interests">
     <h2>Please select the route that interest you:</h2>
       <div>
-        <p>Agriculture, environmental and animal care</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.agriculture" name="agriculture"></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.agriculture" name="agriculture"></mat-checkbox>
+          <p>Agriculture, environmental and animal care</p>
+      </label>
       </div>
       <div>
-        <p>Business and administration</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.business" name="business"></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.business" name="business"></mat-checkbox>
+          <p>Business and administration</p>
+      </label>
       </div>
       <div>
-        <p>Care services</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.care" name="care"></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.care" name="care"></mat-checkbox>
+          <p>Care services</p>
+      </label>
       </div>
       <div>
-        <p>Catering and hospitality</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.catering" name="catering" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.catering" name="catering" ></mat-checkbox>
+          <p>Catering and hospitality</p>
+      </label>
       </div>
       <div>
-        <p>Construction</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.construction" name="construction" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.construction" name="construction" ></mat-checkbox>
+          <p>Construction</p>
+      </label>
       </div>
       <div>
-        <p>Creative and design</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.creative" name="creative" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.creative" name="creative" ></mat-checkbox>
+          <p>Creative and design</p>
+      </label>
       </div>
       <div>
-        <p>Digital</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.digital" name="digital" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.digital" name="digital" ></mat-checkbox>
+          <p>Digital</p>
+      </label>
       </div>
       <div>
-        <p>Education and childcare</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.education" name="education" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.education" name="education" ></mat-checkbox>
+          <p>Education and childcare</p>
+      </label>
       </div>
       <div>
-        <p>Engineering and manufacturing</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.engineering" name="engineering" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.engineering" name="engineering" ></mat-checkbox>
+          <p>Engineering and manufacturing</p>
+      </label>
       </div>
       <div>
-        <p>Hair and beauty</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.hair" name="hair" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.hair" name="hair" ></mat-checkbox>
+          <p>Hair and beauty</p>
+      </label>
       </div>
       <div>
-        <p>Health and science</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.health" name="health" ></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.health" name="health" ></mat-checkbox>
+          <p>Health and science</p>
+        </label>
       </div>
       <div>
-        <p>Legal, finance and accounting</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.legal" name="legal"></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.legal" name="legal"></mat-checkbox>
+          <p>Legal, finance and accounting</p>
+      </label>
       </div>
       <div>
-        <p>Protective services</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.protective" name="protective"></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.protective" name="protective"></mat-checkbox>
+          <p>Protective services</p>
+      </label>
       </div>
       <div>
-        <p>Sales, marketing and procurement</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.sales" name="sales"></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.sales" name="sales"></mat-checkbox>
+          <p>Sales, marketing and procurement</p>
+      </label>
       </div>
       <div>
-        <p>Transport and logistics</p>
-        <mat-checkbox color="primary" [(ngModel)]="apply.transport" name="transport"></mat-checkbox>
+        <label>
+          <mat-checkbox color="primary" [(ngModel)]="apply.transport" name="transport"></mat-checkbox>
+          <p>Transport and logistics</p>
+      </label>
       </div>
     </section>
-
     <div class="container">
       <div class="F-C">
         <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5" [(ngModel)]="apply.comments" name="comments" style="resize: none;"></textarea>
+      </div>
+
+      <div class="recaptcha F-C">
+        <re-captcha (resolved)="resolved($event)" siteKey="6Ldd4g4cAAAAAF9T3jESSBu5LSpII6mHTRUgXVKd"></re-captcha>
       </div>
 
       <div class="btn F-C">

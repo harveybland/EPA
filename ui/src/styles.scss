@@ -2,7 +2,37 @@
 html, body { height: 100%; }
 body { 
     margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-family: "Open Sans", sans-serif !important; 
+}
+
+.mat-h2, .mat-title, .mat-typography h2 {
+    font: 500 20px/32px "Open Sans", sans-serif;
+}
+
+.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
+    font-family: "Open Sans", sans-serif;
+}
+
+mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    background: var(--color-blue) !important;
+}
+
+input {
+    border: solid 1px #d4d3d3;
+    padding: 10px;
+    transition: border 0.3s linear;
+    background: #fff;
+}
+
+select {
+    border: solid 1px #d4d3d3;
+    padding: 10px;
+    transition: border 0.3s linear;
+    background: #fff;
+}
+
+textarea {
+    font-family: "Open Sans", sans-serif;
 }
 
 html {
@@ -20,11 +50,11 @@ html {
     align-items: center;
     justify-content: center !important;
     padding: 0 0px;
+    flex-wrap: wrap;
 }
 
 img {
     max-width: 100%;
-    width: 750px;
     margin: 40px 20px;
     padding: 0 20px;
 }
@@ -34,15 +64,23 @@ img {
     padding: 30px;
     margin-left: auto;
     margin-right: auto;
-    width: 715px;
     max-width: 100%;
     div {
         padding: 5px 0;
     }
 }
 
+label {
+    color: var(--colour-dark-gray);
+}
+
+p {
+    color: var(--colour-dark-gray);
+}
+
 .route div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }

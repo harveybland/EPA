@@ -1,7 +1,7 @@
 import { ApplyService } from './apply.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl,  Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -11,21 +11,13 @@ import { FormGroup, FormControl,  Validators } from '@angular/forms';
 })
 export class ApplyComponent implements OnInit  {
   
+  recaptcha: any[];
 
+  Form: FormGroup;
 
-  constructor(private applyService: ApplyService,
-              private router: Router,
-              
-    ) {}
-
-  Form: FormGroup = new FormGroup({
-    firstname: new FormControl('', Validators.required),
-    surname: new FormControl('', Validators.required)
-  });
-
-  ngOnInit() {
-
-  }
+  // Form state 
+  loading = false;
+  success = false;
 
   apply = {
     firstname: '',
@@ -51,7 +43,23 @@ export class ApplyComponent implements OnInit  {
     transport: ''
   }
 
-  
+  constructor(private applyService: ApplyService,
+              private router: Router,
+              private fb: FormBuilder              
+    ) {}
+
+  ngOnInit() {
+    this.Form = this.fb.group({
+      firstname: ['', [Validators.required] ],
+      surname: ['', [Validators.required] ]
+    })
+  }
+
+
+  resolved(captchaResponse: any[]) {
+    this.recaptcha = captchaResponse;
+    console.log(this.recaptcha)
+  }
 
   submit() {
     console.log(this.apply)

@@ -2,7 +2,6 @@ module.exports = (sequelize, DataTypes) => {
     const Apprenticeship = sequelize.define("Apprenticeship", {
         route: {
             type: DataTypes.STRING,
-            //  primaryKey: true
         },
         name: {
             type: DataTypes.STRING,

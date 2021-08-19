@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { ApplyComponent } from './apply/apply.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
 import { SearchComponent } from './search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+
+import { RecaptchaModule } from 'ng-recaptcha';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
@@ -34,7 +38,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    RecaptchaModule
     
   ],
   providers: [],

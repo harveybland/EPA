@@ -17,12 +17,17 @@ p {
   }
   background: var(--color-white);
     div:nth-child(even){
-      background: lightgray;
+      background: #F8F8F8;
     }
-    div {
+    label {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: end;
+      cursor: pointer;
+      flex-wrap: wrap;
       padding: 15px 20px;
+    }
+    mat-checkbox {
+      margin-right: 25px;
     }
 }

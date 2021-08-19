@@ -80,12 +80,12 @@
 
   <div>
     <button mat-stroked-button><input type="reset" class="reset"></button>
-    <button mat-raised-button color="primary" type="submit" (click)="find()">Find Apprenticeships</button>
-    <div></div>
+    <button mat-raised-button color="primary" type="submit" class="find" (click)="find()">Find Apprenticeships</button>
+    <div style="margin-right: 60px;"></div>
   </div>
 </form>
 
-<div *ngIf="AppArray.length === 0">
+<div *ngIf="AppArray.length === 0" class="F-C result">
   <p>Results will show here.</p>
 </div>
 
@@ -102,7 +102,7 @@
     <tbody>
       <tr *ngFor="let item of AppArray">
         <td>{{ item.name }}</td>
-        <td>{{ item.link }}</td>
+        <td> <a [href]="item.link" target="_blank">{{ item.link }}</a> </td>
       </tr>
     </tbody>
   </table>
