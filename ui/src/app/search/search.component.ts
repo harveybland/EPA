@@ -9,20 +9,25 @@ import { apprenticeship } from './search.model';
 })
 export class SearchComponent implements OnInit {
 
-  table = false;
-
   constructor(private apprenticeshipService: ApprenticeshipService) { }
 
   public AppArray: apprenticeship[] = []
+
+ model = {
+    route: '',
+    status: '',
+    level: '',
+    duration: ''
+  };
 
   ngOnInit() {
  
   }
 
   find() {
-    this.apprenticeshipService.getApprenticeships().subscribe(data => {
+    this.apprenticeshipService.getApprenticeships(this.model).subscribe(data => {
+      console.log(this.model)
       console.log(data)
-      this.table = true
       this.AppArray = data;
     })
   }

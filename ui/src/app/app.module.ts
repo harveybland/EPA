@@ -14,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SearchComponent } from './search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [		
@@ -32,7 +33,8 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
     
   ],
   providers: [],

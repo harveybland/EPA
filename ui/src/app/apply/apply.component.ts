@@ -10,6 +10,7 @@ import { FormGroup, FormControl,  Validators } from '@angular/forms';
   styleUrls: ['./apply.component.scss']
 })
 export class ApplyComponent implements OnInit  {
+  
 
 
   constructor(private applyService: ApplyService,
@@ -17,10 +18,10 @@ export class ApplyComponent implements OnInit  {
               
     ) {}
 
-  // Form: FormGroup = new FormGroup({
-  //   firstname: new FormControl('', Validators.required),
-  //   surname: new FormControl('', Validators.required)
-  // });
+  Form: FormGroup = new FormGroup({
+    firstname: new FormControl('', Validators.required),
+    surname: new FormControl('', Validators.required)
+  });
 
   ngOnInit() {
 
@@ -56,6 +57,7 @@ export class ApplyComponent implements OnInit  {
     console.log(this.apply)
     this.applyService.apply(this.apply).subscribe((res) => {
       console.log(res)
+      
       this.router.navigate(['/landing']);
     })
   }

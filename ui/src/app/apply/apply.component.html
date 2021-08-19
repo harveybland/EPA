@@ -1,13 +1,13 @@
 <div class="container">
   <div><h2>Please enter your details and we'll be in touch</h2></div>
-  <div class="route" formGroup="form" (ngSubmit)="submit">
+  <form class="route">
     <div>
       <label>First Name:</label>
-      <input type="text" [(ngModel)]="apply.firstname" name="firstname">
+      <input type="text" [(ngModel)]="apply.firstname" name="firstname" required>
     </div>
     <div>
       <label>Surname:</label>
-      <input type="text" [(ngModel)]="apply.surname" name="surname">
+      <input type="text" [(ngModel)]="apply.surname" name="surname" required>
     </div>
     <div>
       <label>Email:</label>
@@ -19,7 +19,8 @@
     </div>
     <div>
       <label>Level of previous qualifications:</label>
-      <select matNativeControl required [(ngModel)]="apply.previous_level" name="previous_level">
+      <select matNativeControl [(ngModel)]="apply.previous_level" name="previous_level">
+        <option value="0">0</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -28,7 +29,7 @@
         <option value="7">7</option>
       </select>
     </div>
-  </div>
+  </form>
 </div>
   <section class="interests">
     <h2>Please select the route that interest you:</h2>
@@ -95,12 +96,11 @@
     </section>
 
     <div class="container">
-      <div>
-        <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5" [(ngModel)]="apply.comments" name="comments"></textarea>
+      <div class="F-C">
+        <textarea placeholder="Please provide any other information that you wish to let our recruiters know…" cols="54" rows="5" [(ngModel)]="apply.comments" name="comments" style="resize: none;"></textarea>
       </div>
 
-
       <div class="btn F-C">
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button color="primary" type="submit" (click)="submit()">Submit</button>
       </div>
     </div>

@@ -1,0 +1,22 @@
+.title {
+    text-align: left;
+}
+
+.reset {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+td {
+    padding: 5px 10px;
+}
+
+th{
+    padding: 5px 10px;
+    background: lightgray;
+}
+
+tr:nth-child(even){
+  background: lightgray;
+}
