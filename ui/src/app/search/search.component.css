@@ -2,6 +2,21 @@
     text-align: left;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.grid p {
+    margin: 0;
+}
+
+.grid li {
+    padding: 10px 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .reset {
     background: none;
     border: none;
@@ -20,21 +35,51 @@ td {
     padding: 10px;
 }
 
-th{
+.title p{
     padding: 5px 10px;
-    background: var(--color-hover);
+    background: var(--color-blue);
     color: var(--color-white);
 }
 
-tr:nth-child(even){
+ul:nth-child(even){
   background: #dfebf4;
 }
 
 .my-pagination /deep/ .ngx-pagination .current {
+    margin-top: 15px;
     background: var(--color-blue);
-}
-
-  @media only screen and (max-width: 700px) {
-
   }
 
+.route div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 460px) {
+    .container {
+        width: 278px;
+        padding: 30px 20px;
+    }
+    label {
+        width: 100px;
+    }
+    select {
+        width: 100%;
+    }
+    .btns {
+        flex-direction: column-reverse;
+    }
+    .btns .find {
+        margin: 20px 0;
+    }
+    .btns div {
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .container {
+        width: 276px;
+    }
+  }

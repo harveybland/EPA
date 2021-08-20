@@ -20,6 +20,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { NgxPaginationModule } from "ngx-pagination";
 import { RecaptchaModule } from 'ng-recaptcha';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [		
@@ -42,7 +43,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatChipsModule,
     MatProgressSpinnerModule,
     RecaptchaModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      progressBar: true
+    })
     
   ],
   providers: [],

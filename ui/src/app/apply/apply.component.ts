@@ -1,7 +1,8 @@
 import { ApplyService } from './apply.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -38,34 +39,9 @@ export class ApplyComponent implements OnInit  {
     transport: new FormControl('')
   });
 
-  // apply = {
-  //   firstname: '',
-  //   surname: '',
-  //   email: '',
-  //   phone: '',
-  //   comments: '',
-  //   previous_level: '',
-  //   agriculture: '',
-  //   business: '',
-  //   care: '',
-  //   catering: '',
-  //   construction: '',
-  //   creative: '',
-  //   digital: '',
-  //   education: '',
-  //   engineering: '',
-  //   hair: '',
-  //   health: '',
-  //   legal: '',
-  //   protective: '',
-  //   sales: '',
-  //   transport: ''
-  // }
-
-
   constructor(private applyService: ApplyService,
               private router: Router,
-              private fb: FormBuilder              
+              private toastr: ToastrService     
     ) {}
 
   ngOnInit() {
@@ -80,7 +56,7 @@ export class ApplyComponent implements OnInit  {
 
   submit() {
     if (!this.catcheResolve) {
-      alert('Are you a robot!')
+      this.toastr.error('Are you a robot?')
       return;
     }
     if(this.Form.valid){
@@ -90,8 +66,9 @@ export class ApplyComponent implements OnInit  {
       this.Form.controls.surname.markAsTouched();
       this.Form.controls.firstname.markAsPristine();
       this.Form.controls.surname.markAsPristine();
-    } else {
-      alert('Yeet')
+    } 
+    if (this.Form.invalid) {
+      this.toastr.error('Please complete the form')
     }
     this.applyService.apply(this.Form.value).subscribe((res) => {
       console.log(res)

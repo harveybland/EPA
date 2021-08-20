@@ -32,6 +32,16 @@ input {
     background: #fff;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
 select {
     border: solid 1px #d4d3d3;
     padding: 10px;
@@ -54,6 +64,10 @@ html {
     --color-danger: red;
 }
 
+.container {
+    width: 800px;
+}
+
 .F-C {
     display: flex;
     align-items: center;
@@ -68,12 +82,6 @@ html {
     justify-content: end !important;
     padding: 0 0px;
     flex-wrap: wrap;
-}
-
-img {
-    max-width: 100%;
-    margin: 40px 20px;
-    padding: 0 20px;
 }
 
 .container {
@@ -94,3 +102,22 @@ label {
 p {
     color: var(--colour-dark-gray);
 }
+
+
+@media only screen and (max-width: 900px) {
+    .container {
+        width: 600px;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .container {
+        width: 450px;
+    }
+  }
+
+  @media only screen and (max-width: 530px) {
+    .container {
+        width: 360px;
+    }
+  }

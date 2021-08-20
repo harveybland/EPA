@@ -19,6 +19,7 @@ h2 {
   margin-bottom: 30px;
 }
 
+// Bottom half of apply page 
 .interests {
   h2 {
     padding: 0 20px
@@ -41,6 +42,7 @@ h2 {
 }
 
 
+// Validation errors
 .form-group {
   position: relative;
   display: flex;
@@ -72,20 +74,28 @@ h2 {
       top: -21px;  
     }
   }
+}
 
-  // &.form-group--invalid-email {
-  //   textarea,
-  //   input {
-  //     transition: border-color 0.3s;
-  //     border-color: var(--color-danger);
-  //   }
-  //   &:after {
-  //     content: attr(data-error-email);
-  //     position: absolute;
-  //     bottom: -22px;
-  //     left: 5px;
-  //     font-size: 1.4rem;
-  //     color: var(--color-danger);
-  //   }
-  // }
+
+@media only screen and (max-width: 460px) {
+  .container {
+    width: 300px;
+    padding: 30px 20px;
+  }
+  span {
+    width: 200px;
+  }
+
+  input {
+    width: 100%;
+  }
+  .interests label{
+    padding: 15px;
+}
+}
+
+@media only screen and (max-width: 360px) {
+  .container {
+      width: 277px;
+  }
 }

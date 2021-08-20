@@ -3,7 +3,7 @@
 
 <form class="route">
   <div>
-    <span>Route:</span>
+    <label>Route:</label>
     <select matNativeControl  [(ngModel)]="model.route" name="route">
       <option value="">Any</option>
       <option value="Agriculture, environmental and animal care">Agriculture, environmental and animal care</option>
@@ -76,7 +76,7 @@
     </select>
   </div>
 
-  <div>
+  <div class="btns">
     <button mat-stroked-button><input type="reset" class="reset"></button>
     <button mat-raised-button color="primary" type="submit" class="find" (click)="find()">Find Apprenticeships</button>
     <div style="margin-right: 60px;"></div>
@@ -87,25 +87,23 @@
   <p>Results will show here.</p>
 </div>
 
-  <table *ngIf="AppArray.length > 0">
-    <thead>
+<section *ngIf="AppArray.length > 0">
+    <span>
       <h2>Result</h2>
-    </thead>
-    <tbody>
-        <tr class="title">
-          <th>Name</th>
-          <th>Link</th>
-        </tr>
-    </tbody>
-    <tbody>
-      <tr *ngFor="let item of AppArray | paginate: { 
+    </span>
+      <span class="title grid">
+        <p>Name</p>
+        <p>Link</p>
+      </span>
+    <div>
+      <ul *ngFor="let item of AppArray | paginate: { 
         itemsPerPage: 10, 
         currentPage: page,
-        totleItems: totalLength   } ">
-        <td>{{ item.name }}</td>
-        <td> <a [href]="item.link" target="_blank">{{ item.link }}</a> </td>
-      </tr>
-      <pagination-controls style="text-align: center;" class="my-pagination" (pageChange)="page = $event"></pagination-controls>
-    </tbody>
-  </table>
+        totleItems: totalLength}" class="grid">
+        <li>{{ item.name }}</li>
+        <li> <a [href]="item.link" target="_blank">{{ item.link }}</a> </li>
+      </ul>
+    </div>
+  <pagination-controls style="text-align: right;" class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+</section>
 </div>

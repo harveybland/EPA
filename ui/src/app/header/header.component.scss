@@ -4,6 +4,36 @@ a {
     font-weight: normal;
 }
 
+body .grid-container {
+    max-width: 1100px;
+}
+
+.inside-header {
+    padding: 40px;
+}
+
+.grid-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.site-logo {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.site-logo .header-image {
+    width: 750px;
+    vertical-align: middle;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+
+
 nav {
     background: var(--color-blue);
 }
@@ -40,7 +70,12 @@ li {
     list-style: none;
 }
 
-// dropdown
+
+img {
+    max-width: 100%;
+}
+
+// hover dropdown
 .dropdown {
     position: relative;
   }
@@ -75,20 +110,3 @@ li {
 .burgerMenu {
     display: none;
 }
-  
-//   @media only screen and (max-width: 700px) {
-//     .desktop {
-//         opacity: 0;
-//         overflow: hidden;
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     ul {
-//         flex-direction: column;
-//     }
-
-//     .burgerMenu {
-//         display: block;
-//     }
-//   }
