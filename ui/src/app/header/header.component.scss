@@ -101,12 +101,66 @@ img {
     color: #bbd2e8;
 }
   
-  .dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
       display: block;
   }
 
-  .dropdown:hover .layer { background: var(--color-hover); }
+.dropdown:hover .layer { background: var(--color-hover); }
 
 .burgerMenu {
     display: none;
+}
+
+// Burger menu
+.burger {
+    display: none;
+}
+
+.burger-content {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .burger {
+        display: flex;
+        justify-content: center;
+        background: var(--color-blue);
+        padding: 15px 0;
+        color: var(--color-white);
+    }
+
+    .active {
+        background: none !important;
+    }
+
+    li {
+        padding: 15px;
+    }
+
+    .material-icons {
+        display: none;
+    }
+
+    .burger-content {
+        display: flex;
+        a {
+            margin: 15px 0;
+        }
+    }
+
+    .dropdown:hover .layer {
+        pointer-events: none;
+      }
+
+    .F-Row {
+        flex-direction: row !important;
+    }
+
+    .F-C {
+        flex-direction: column;
+    }
+
+    ul {
+        flex-direction: column;
+    }
 }

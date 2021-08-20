@@ -87,6 +87,7 @@
   <p>Results will show here.</p>
 </div>
 
+
 <section *ngIf="AppArray.length > 0">
     <span>
       <h2 style="margin-top: 10px;">Result</h2>
@@ -107,3 +108,5 @@
   <pagination-controls style="text-align: right;" class="my-pagination" (pageChange)="page = $event"></pagination-controls>
 </section>
 </div>
+<div *ngIf="AppArray.length === 0" style="height: 17.5rem; background-color: var(--color-background)"></div>
+

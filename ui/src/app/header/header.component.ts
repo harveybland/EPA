@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  // navOpen : boolean = false ; 
+
   constructor() { }
 
   ngOnInit() {
   }
 
 
-  open() {
-    
-  }
+  // open() {
+  //   console.log('hello')
+  //   this.navOpen = !this.navOpen;
+  // }
 }

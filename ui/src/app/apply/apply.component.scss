@@ -15,10 +15,6 @@ p {
     margin: 0;
 }
 
-h2 {
-  margin-bottom: 30px;
-}
-
 // Bottom half of apply page 
 .interests {
   h2 {
@@ -77,6 +73,7 @@ h2 {
 }
 
 
+
 @media only screen and (max-width: 460px) {
   .container {
     width: 300px;
@@ -92,7 +89,11 @@ h2 {
   .interests label{
     padding: 15px;
 }
+.interests h2 {
+  padding: 0;
 }
+}
+
 
 @media only screen and (max-width: 360px) {
   .container {

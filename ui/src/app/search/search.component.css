@@ -12,7 +12,7 @@
 }
 
 .grid li {
-    padding: 10px 5px;
+    padding: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -42,7 +42,7 @@ td {
 }
 
 ul:nth-child(even){
-  background: #dfebf4;
+  background: #f1f7fd;
 }
 
 .my-pagination /deep/ .ngx-pagination .current {
