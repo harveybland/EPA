@@ -56,7 +56,7 @@ export class ApplyComponent implements OnInit  {
 
   submit() {
     if (!this.catcheResolve) {
-      this.toastr.error('Are you a robot?')
+      this.toastr.error('Please complete the captcha')
       return;
     }
     if(this.Form.valid){

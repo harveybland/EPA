@@ -7,7 +7,7 @@ import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  // navOpen : boolean = false ; 
+  navOpen : boolean = false ; 
 
   constructor() { }
 
@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  // open() {
-  //   console.log('hello')
-  //   this.navOpen = !this.navOpen;
-  // }
+  open() {
+    console.log('hello')
+    this.navOpen = !this.navOpen;
+  }
 }

@@ -121,6 +121,10 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
     .burger {
         display: flex;
         justify-content: center;
@@ -135,10 +139,6 @@ img {
 
     li {
         padding: 15px;
-    }
-
-    .material-icons {
-        display: none;
     }
 
     .burger-content {

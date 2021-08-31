@@ -10,7 +10,7 @@ const sequelize = new Sequelize(dbconfig.database, dbconfig.user, dbconfig.passw
         tableName: 'Contact'
     }
 })
-
+ 
 const db = {}
 
 db.Sequelize = Sequelize;
