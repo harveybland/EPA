@@ -13,11 +13,11 @@ export class SearchComponent implements OnInit {
 
   public AppArray: apprenticeship[] = []
 
-  totalLength:any;
+  totalLength: any;
   page: number = 1;
 
 
- model = {
+  model = {
     route: '',
     status: '',
     level: '',
@@ -25,14 +25,11 @@ export class SearchComponent implements OnInit {
   };
 
   ngOnInit() {
- 
+
   }
 
   find() {
     this.apprenticeshipService.getApprenticeships(this.model).subscribe(data => {
-      console.log(this.model)
-      console.log(data)
-
       this.totalLength = data.length;
       this.AppArray = data;
     })

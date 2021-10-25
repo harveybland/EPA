@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
 
 
   open() {
-    console.log('hello')
     this.navOpen = !this.navOpen;
   }
 }

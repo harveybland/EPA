@@ -23,12 +23,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [		
-      AppComponent,
-      ApplyComponent,
-      HeaderComponent,
-      SearchComponent
-   ],
+  declarations: [
+    AppComponent,
+    ApplyComponent,
+    HeaderComponent,
+    SearchComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,7 +48,7 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 2000,
       progressBar: true
     })
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
